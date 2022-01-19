@@ -1,7 +1,5 @@
 package com.newrelic.virtuoso.restapi;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -20,8 +18,6 @@ import java.util.Map;
 @RestController
 public class RestApiApplication extends SpringBootServletInitializer {
 
-    Logger logger = LoggerFactory.getLogger(getClass());
-
     //bootRun
     public static void main(String[] args) {
         SpringApplication.run(RestApiApplication.class, args);
@@ -37,7 +33,6 @@ public class RestApiApplication extends SpringBootServletInitializer {
     @GetMapping(value = "/hello", produces = "application/json")
     public Map<String, ?> hello() {
         return new HashMap<String, String>() {{
-            logger.info("ping");
             put("message", "Hello! I'm a GET endpoint");
             put("timestamp", new Date().toString());
         }};

@@ -13,6 +13,15 @@ tasks.war {
     archiveFileName.set("spring-boot-rest.war")
 }
 
+tasks.war {
+    webInf{
+        from('src/META-INF') {
+            include 'jboss-web.xml'
+            into('classes/META-INF/')
+        }
+    }
+}
+
 tasks.bootJar {
     archiveFileName.set("spring-boot-rest.jar")
 }
@@ -20,6 +29,14 @@ tasks.bootJar {
 
 repositories {
     mavenCentral()
+}
+
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+        exclude group: 'ch.qos.logback', module: 'logback-classic'
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+    }
 }
 
 dependencies {
