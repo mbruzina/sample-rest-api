@@ -47,7 +47,7 @@ OpenJDK 64-Bit Server VM Temurin-11.0.12+7 (build 11.0.12+7, mixed mode)
 ```
 
 ```
-setJdk16 && java -version
+$ setJdk16 && java -version
 openjdk version "16.0.2" 2021-07-20
 OpenJDK Runtime Environment Temurin-16.0.2+7 (build 16.0.2+7)
 OpenJDK 64-Bit Server VM Temurin-16.0.2+7 (build 16.0.2+7, mixed mode, sharing)
