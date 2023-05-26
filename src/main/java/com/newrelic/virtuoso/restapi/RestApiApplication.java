@@ -12,6 +12,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,9 +36,10 @@ public class RestApiApplication extends SpringBootServletInitializer {
         return builder.sources(RestApiApplication.class);
     }
 
-    @Scheduled(fixedRate = 10000)
+//    @Scheduled(fixedRate = 10000)
     @GetMapping(value = "/hello", produces = "application/json")
-    public Map<String, ?> hello() {
+    public Map<String, ?> hello(HttpServletRequest request) {
+        logger.info("Received request to " + request.getRequestURI().toString());
         logger.info("This is an info message");
         logger.warn("This is a warn message");
         logger.error("This is an error message");
