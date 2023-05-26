@@ -1,4 +1,5 @@
 #!/bin/bash
+cd $HOME
 
 # install utilities
 sudo apt-get -y install unzip

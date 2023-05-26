@@ -1,4 +1,5 @@
 #!/bin/bash
+cd $HOME
 
 # install java
 sudo apt install -y default-jre
