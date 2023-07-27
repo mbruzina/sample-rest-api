@@ -9,7 +9,7 @@ git clone https://github.com/mbruzina/sample-rest-api.git && \
 cd sample-rest-api/ && \
 ./gradlew bootJar && \
 ./gradlew downloadNewrelic && \
-./gradlew unzipNewrelic# or ./gradlew build for a war
+./gradlew unzipNewrelic
 
 # install docker dependencies and keys
 sudo apt-get update && \
