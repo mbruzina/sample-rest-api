@@ -7,7 +7,9 @@ sudo apt install -y default-jre
 # clone repo & build executable jar
 git clone https://github.com/mbruzina/sample-rest-api.git && \
 cd sample-rest-api/ && \
-./gradlew bootJar # or ./gradlew build for a war
+./gradlew bootJar && \
+./gradlew downloadNewrelic && \
+./gradlew unzipNewrelic# or ./gradlew build for a war
 
 # install docker dependencies and keys
 sudo apt-get update && \
